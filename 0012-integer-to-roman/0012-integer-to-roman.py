@@ -14,12 +14,9 @@ class Solution:
         keys = list(RomanDict.keys())
         numlist = list(map(int, str(num)))
         for i in range(len(numlist)):
-            # make = numlist[i]*(10**(len(numlist)-i-1))
             checklist = check[numlist[i]]
-            print(numlist[i],'checklist',checklist)
             tmp = ''
             for c in checklist:
                 tmp += RomanDict[c*10**(len(numlist)-i-1)]
             answer += tmp
-            print(tmp)
         return answer
